@@ -13,10 +13,11 @@ class Movie {
 
   factory Movie.fromJson(Map<String, dynamic> json) {
     return Movie(
-      title: json['title'] ?? 'Unknown Title',
-      releaseDate: json['release_date'] ?? 'Unknown Release Date',
-      overview: json['overview'] ?? 'No Overview available',
-      posterUrl: 'https://image.tmdb.org/t/p/w500${json['poster_path']}' ?? '',
+      title: json['title'] ?? 'No Title',
+      releaseDate: json['release_date'] ?? 'No Release Date',
+      overview: json['overview'] ?? 'No Overview',
+      posterUrl: 'https://image.tmdb.org/t/p/w500' + (json['poster_path'] ?? ''),
     );
   }
 }
+
